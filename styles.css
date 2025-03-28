@@ -9,8 +9,6 @@
         4.1 Header
         4.2 Introduction
         4.3 Main
- */
-        etc.
     5. Media Queries
 ////////////////////////*/
 
@@ -52,8 +50,6 @@ p {
     display: flex;
     flex-direction: row;
     justify-content: center;
-
-
 }
 
 .inner-container {
@@ -62,8 +58,57 @@ p {
     flex-direction: column;
     align-items: center;
     margin: 20px;
+    width: 100%
+}
+
+.guide-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    min-height: 50vh;
+    padding-top: 50px;
+    gap: 50px;
+}
+
+.guide-text-box {
+    display: flex;
+    max-width: 400px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+}
+
+.squiggle-image {
+    width: 50px;
+}
+
+.guide-text-box p:last-of-type {
+    color: var(--purple-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.guide-image-box {
+    display: flex;
+    max-width: 800px;
+    flex-shrink: 1;
+    flex-grow: 0;
 
 
+}
+
+.guide-image {
+    width: 100%;
+    box-shadow: 0px 15px 20px -5px rgba(0, 0, 0, 0.3);
+
+}
+
+section.outer-container:nth-of-type(odd) .guide-wrapper {
+    flex-direction: row-reverse;
 }
 
 /* --------------- 3.2 Other --------------------------- */
@@ -106,13 +151,14 @@ a:active {
 
 .content-header {
     display: flex;
-    flex-basis: 200px;
+    flex-basis: auto;
+    width: 100%;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 25px;
     align-items: center;
     text-align: center;
     color: white;
-    margin: 100px;
+    padding: 100px;
 }
 
 button {
@@ -130,48 +176,54 @@ button {
 .content-header img {
     position: absolute;
     bottom: -30px;
-    width: 50px;
+    width: 60px;
 
 }
 
 /* --------------- 4.2 Introduction ------------------- */
-.introduction{
-    display:flex;
+.introduction {
+    display: flex;
     gap: 20px;
-    flex-basis: 300px;
+    flex-basis: auto;
+    width: 100%;
+    min-height: 50vh;
     flex-direction: column;
     justify-content: center;
-
     text-align: center;
 
 
-
-
 }
 
-.introduction p{
+.introduction p {
     font-family: "Merriweather", cursive;
-    font-size: 1em;
+    font-size: 25px;
     font-weight: 600;
     color: var(--purple-color);
-    position: relative;
+    width: 100%;
+
 
 }
 
-.question{
+.question {
     font-family: "Merriweather", cursive;
-    font-size: 12px;
-    margin: 20px 0px;
-    position: absolute;
-    bottom: 100px;
+    font-size: 16px;
+    margin-top: -50px;
+    padding-bottom: 50px;
+
+
 }
 
-.question a{
+.question a {
     color: var(--purple-color);
     cursor: default;
+    font-weight: 500;
+
 }
 
-/* ------------------------------- 4.3 Main-------------------------------- */
+/* ------------------------------- 4.3 Main -------------------------------- */
+.rollingstone-background {
+    background-color: var(--light-grey-color);
+}
 
 
 /* ------------------------------- 5. Media Queries -------------------------------- */
