@@ -8,7 +8,10 @@
     4. Areas
         4.1 Header
         4.2 Introduction
-        4.3 Main
+        4.3 Guide
+        4.4 Services
+        4.5 Form
+        4.6 Footer
     5. Media Queries
 ////////////////////////*/
 
@@ -43,7 +46,15 @@ p {
     font-family: "roboto", sans-serif;
 }
 
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: white;
+
+}
+
 /* ------------------------------- 3. Layout --------------------------------------- */
+
 
 /* --------------- 3.1 Reusables ----------------------- */
 .outer-container {
@@ -57,69 +68,30 @@ p {
     flex-basis: 1200px;
     flex-direction: column;
     align-items: center;
-    margin: 20px;
-    width: 100%
-}
-
-.guide-wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    min-height: 50vh;
-    padding-top: 50px;
-    gap: 50px;
-}
-
-.guide-text-box {
-    display: flex;
-    max-width: 400px;
-    flex-direction: column;
-    justify-content: center;
-    gap: 25px;
-}
-
-.squiggle-image {
-    width: 50px;
-}
-
-.guide-text-box p:last-of-type {
-    color: var(--purple-color);
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 12px;
-    letter-spacing: 2px;
-}
-
-.guide-image-box {
-    display: flex;
-    max-width: 800px;
-    flex-shrink: 1;
-    flex-grow: 0;
-
-
-}
-
-.guide-image {
+    margin: 20px 20px 100px 20px;
     width: 100%;
-    box-shadow: 0px 15px 20px -5px rgba(0, 0, 0, 0.3);
 
 }
-
-section.outer-container:nth-of-type(odd) .guide-wrapper {
-    flex-direction: row-reverse;
-}
-
-/* --------------- 3.2 Other --------------------------- */
-
-/* ------------------------------- 4. Areas ---------------------------------------- */
 
 /* --------------- 4.1 Header ------------------------- */
 header {
     background: linear-gradient(to right, var(--blue-color), var(--purple-color));
     min-height: 50vh;
     position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-right: 100vw solid transparent;
+    border-bottom: 100px solid white;
+    z-index: -1;
 }
 
 .navigation-header {
@@ -175,8 +147,8 @@ button {
 
 .content-header img {
     position: absolute;
-    bottom: -30px;
-    width: 60px;
+    bottom: 10px;
+    width: 80px;
 
 }
 
@@ -220,10 +192,278 @@ button {
 
 }
 
-/* ------------------------------- 4.3 Main -------------------------------- */
-.rollingstone-background {
+.introduction-background {
+    background: white;
+    min-height: 50vh;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.introduction-background::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-right: 100vw solid transparent;
+    border-bottom: 100px solid var(--light-grey-color);
+    z-index: -1;
+}
+
+/* ------------------------------- 4.3 Guide -------------------------------- */
+
+.guide-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    min-height: 50vh;
+    padding-top: 50px;
+    gap: 50px;
+}
+
+.guide-text-box {
+    display: flex;
+    max-width: 400px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+}
+
+.squiggle-image {
+    width: 50px;
+}
+
+.guide-text-box p:last-of-type {
+    color: var(--purple-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.guide-image-box {
+    display: flex;
+    max-width: 800px;
+    flex-shrink: 1;
+    flex-grow: 0;
+
+
+}
+
+.guide-image {
+    width: 100%;
+    box-shadow: 0px 15px 20px -5px rgba(0, 0, 0, 0.3);
+
+}
+
+section.outer-container:nth-of-type(odd) .guide-wrapper {
+    flex-direction: row-reverse;
+}
+
+.guide-background {
     background-color: var(--light-grey-color);
+}
+
+.guide-background-angle {
+    background: var(--light-grey-color);
+    min-height: 50vh;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.guide-background-angle::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-right: 100vw solid transparent;
+    border-bottom: 100px solid white;
+    z-index: -1;
+}
+
+/* ------------------------------- 4.4 Services -------------------------------- */
+.grid-container {
+    display: grid;
+    flex-basis: 1100px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px 25px;
+    align-items: stretch;
+    padding-top: 50px;
+    margin-bottom: 100px;
+
+
+}
+
+.services-flex-container {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    width: 350px;
+
+    gap: 25px;
+    padding: 40px;
+    border: 1px solid var(--purple-color);
+    box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.5);
+
+
+}
+
+.services-image {
+    width: 80px;
+
+}
+
+.services-flex-container h3 {
+    color: var(--purple-color);
+    margin-top: -15px;
+
+}
+
+.services-flex-container p {
+    color: var(--grey-color);
+    font-size: 14px;
+    font-weight: 200;
+
+}
+
+
+.outer-container_form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: linear-gradient(to right, var(--blue-color), var(--purple-color));
+    min-height: 50vh;
+}
+
+.inner-container_form {
+    display: flex;
+    flex-basis: 1200px;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin: 100px 20px 100px 20px;
+    width: 100%;
+    color: white;
+    padding-top: 50px;
+
+}
+
+/* ------------------------------- 4.5 Form -------------------------------- */
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    font-family: "roboto", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    width: 100%;
+    max-width: 700px;
+    align-items: center;
+
+
+}
+
+input {
+    width: 100%;
+    height: 40px;
+    border-radius: 3px;
+    border: transparent;
+    padding-left: 10px;
+
+}
+
+textarea {
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-family: "Roboto", sans-serif;
+}
+
+
+.submit-button {
+    width: 100px;
+    margin-top: 15px;
+}
+
+
+.form-container label {
+    align-self: flex-start;
+
+}
+
+.form-background-angle {
+    min-height: 50vh;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.form-background-angle::after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-right: 100vw solid white;
+    border-bottom: 100px solid transparent;
+    z-index: -1;
+}
+
+/* ------------------------------- 4.6 Footer -------------------------------- */
+
+.footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+    width: 100%;
+    min-height: 5vh;
+    font-size: 12px;
+    font-weight: 300;
 }
 
 
 /* ------------------------------- 5. Media Queries -------------------------------- */
+@media (max-width: 768px) {
+
+
+    .navigation-header {
+        justify-content: space-around;
+    }
+
+    .guide-wrapper {
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    section.outer-container:nth-of-type(odd) .guide-wrapper {
+        flex-direction: column-reverse;
+
+    }
+
+    .guide-wrapper {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+
+    .grid-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+
+    }
+
+
+}
